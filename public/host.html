@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Take Speed Dating Host</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container host-container">
+        <h1>Hot Take Speed Dating Host Controls</h1>
+        
+        <div class="host-dashboard">
+            <div class="host-controls">
+                <div class="control-group">
+                    <h2>Round Controls</h2>
+                    <div class="control-panel">
+                        <div class="control-item">
+                            <label for="countdown-time">Discussion Time (seconds):</label>
+                            <input type="number" id="countdown-time" value="60" min="10" max="300">
+                        </div>
+                        
+                        <button id="create-pairs" class="primary-button">Create Random Pairs</button>
+                        <button id="start-round" class="primary-button">Start Round with Current Pairs</button>
+                        <button id="end-game" class="danger-button">End Game & Show Leaderboard</button>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <h2>Round Status</h2>
+                    <div id="round-status" class="round-status">
+                        <div id="round-indicator" class="round-indicator waiting">
+                            Waiting to start
+                        </div>
+                        <div id="completion-indicator" class="completion-indicator">
+                            <div class="percentage-text"><span id="percentage-value">0</span>% of players rated</div>
+                            <div class="percentage-bar">
+                                <div id="percentage-fill" class="percentage-fill" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="player-management">
+                <h2>Connected Players</h2>
+                <div id="players-list" class="players-list">
+                    <div class="no-players">No players connected yet</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="leaderboard-view" class="leaderboard-view hidden">
+            <h2>Game Results - Based Opinion Leaderboard</h2>
+            <div id="host-leaderboard" class="host-leaderboard"></div>
+            <button id="reset-game" class="primary-button">Reset Game</button>
+        </div>
+        
+        <div id="pairs-view" class="pairs-view hidden">
+            <h2>Current Player Pairs</h2>
+            <div id="pairs-list" class="pairs-list"></div>
+        </div>
+    </div>
+    
+    <script src="host.js"></script>
+</body>
+</html>

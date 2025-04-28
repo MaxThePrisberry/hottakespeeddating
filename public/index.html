@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Take Speed Dating</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container player-container">
+        <h1>Hot Take Speed Dating</h1>
+        
+        <div id="registration" class="registration">
+            <h2>What's your name?</h2>
+            <input type="text" id="player-name" placeholder="Enter your name">
+            <button id="register-button">Join Game</button>
+        </div>
+        
+        <div id="waiting-area" class="waiting-area hidden">
+            <h2><span id="player-name-display"></span></h2>
+            <p>Awaiting game start...</p>
+            <div class="loader"></div>
+        </div>
+        
+        <div id="discussion-area" class="discussion-area hidden">
+            <div class="discussion-header">
+                <h2>You've been paired with: <span id="partner-name"></span></h2>
+                <div class="timer">Time Left: <span id="timer-display">60</span>s</div>
+            </div>
+            
+            <div class="question-box">
+                <h3>Discuss this question:</h3>
+                <div id="question-text" class="question-text"></div>
+            </div>
+            
+            <div class="discussion-instructions">
+                <p>Discuss this question with your partner!</p>
+                <p>When the timer ends, you'll rate how "based" their opinion is.</p>
+            </div>
+        </div>
+        
+        <div id="rating-area" class="rating-area hidden">
+            <h2>Time's up!</h2>
+            <p>Rate how based <strong><span id="rating-partner-name"></span></strong>'s opinion was:</p>
+            
+            <div class="question-reminder">
+                <h3>On the question:</h3>
+                <div id="rating-question-text" class="question-text"></div>
+            </div>
+            
+            <div class="rating-slider-container">
+                <input type="range" min="0" max="10" value="5" class="slider" id="wrongness-slider">
+                <div class="slider-labels">
+                    <span>Completely Wrong</span>
+                    <span>Absolutely Based</span>
+                </div>
+                <div class="slider-value">
+                    <span id="slider-value-display">5</span>/10
+                </div>
+            </div>
+            
+            <button id="submit-rating">Submit Rating</button>
+        </div>
+        
+        <div id="rating-confirmation" class="rating-confirmation hidden">
+            <h2>Rating Submitted!</h2>
+            <p>Waiting for the next round...</p>
+        </div>
+        
+        <div id="leaderboard-area" class="leaderboard-area hidden">
+            <h2>Game Over - Most Based Opinion Rankings</h2>
+            <div id="leaderboard" class="leaderboard"></div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
